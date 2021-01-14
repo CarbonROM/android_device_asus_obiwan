@@ -40,12 +40,20 @@ PRODUCT_COPY_FILES += \
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.asus_kona
+
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/goodix_ts.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/goodix_ts.idc \
     $(LOCAL_PATH)/idc/goodix_ts_station.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/goodix_ts_station.idc \
     $(LOCAL_PATH)/keychars/goodix_ts.kcm:$(TARGET_COPY_OUT_SYSTEM)/usr/keychars/goodix_ts.kcm \
     $(LOCAL_PATH)/keylayout/goodix_ts.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/goodix_ts.kl
+
+# Lineage Permissions
+PRODUCT_COPY_FILES += \
+    vendor/carbon/prebuilt/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
 
 PRODUCT_SHIPPING_API_LEVEL := 29
 
